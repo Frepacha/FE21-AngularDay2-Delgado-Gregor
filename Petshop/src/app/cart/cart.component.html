@@ -4,3 +4,31 @@
     <span>{{ pets.name }} </span>
     <span>{{ pets.price | currency }}</span>
 </div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+    <div>
+        <label for="name">
+        Name
+        </label>
+
+        <input id="name" type="text" formControlName="name">
+    </div>
+
+    <div>
+        <label for="address">
+        Address
+        </label>
+        <input id="address" type="text" formControlName="address">
+    </div>
+
+    <div>
+        <label for="zipcode">
+        Zip-code
+        </label>
+        <input id="zipcode" type="text" formControlName="zipcode">
+    </div>
+
+    <button class="button" type="submit">Purchase</button>
+
+
+</form>
