@@ -1,0 +1,13 @@
+<h2>Pet Details</h2>
+
+
+<div *ngIf="pets">
+    <!-- pets is the param from pet-details.comp.ts -->
+
+    <h3>{{ pets.name }}</h3>
+    <h4>{{ pets.price | currency }}</h4>
+    <p>{{ pets.description }}</p>
+
+    <!--   buy button -->
+    <button (click)="addToCart(pets)">Buy</button>
+</div>

@@ -1,1 +1,16 @@
-<p>pet-list works!</p>
+<h2>Pets</h2>
+
+<div *ngFor="let Pets of petsList ; index as petId">
+    <!-- index will refer to the index of the element, productId is just a parameter name that you can change if you want, but
+    you need to change it in the app.routing.module.ts -->
+
+    <h3>
+        <a routerLink="pets/{{petId}}">{{ Pets.name }}</a>
+
+        <!--Pets is in oly a variable were i put the list petsList from petProduct.ts-->
+    </h3>
+    <!-- here is the pet description -->
+    <p *ngIf="Pets.description">
+        Description: {{ Pets.description }}
+    </p>
+</div>
