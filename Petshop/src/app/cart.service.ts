@@ -23,4 +23,9 @@ export class CartService {
     this.petitems = [];
     return this.petitems;
   }
+
+  // tslint:disable-next-line: typedef
+  itemsLength(){
+    return this.petitems.length;
+  }
 }
