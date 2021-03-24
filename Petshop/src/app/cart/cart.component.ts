@@ -24,4 +24,12 @@ checkoutForm;
     this.petitems =  this.cartService.getItems();
   }
 
+  // tslint:disable-next-line: typedef
+  onSubmit(customerData) {
+
+    // Process checkout data here
+    console.warn('Your Pet has been submitted', customerData);
+    this.petitems = this.cartService.clearCart();
+    this.checkoutForm.reset();
+  }
 }
