@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -10,7 +11,14 @@ import { CartService } from '../cart.service';
 /* We added the items in the ngOnInit() function, because it will be loaded every time we enter the component or we go to the cart component. */
 export class CartComponent implements OnInit {
 petitems;
-  constructor(private cartService: CartService) { }
+checkoutForm;
+  constructor(private cartService: CartService, private formBuilder: FormBuilder) {
+    this.checkoutForm = this.formBuilder.group({
+      name: '',
+      adress: '',
+      zipcode: ''
+    });
+  }
 
   ngOnInit(): void {
     this.petitems =  this.cartService.getItems();
